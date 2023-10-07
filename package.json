@@ -1,0 +1,34 @@
+{
+  "name": "nodemedia",
+  "version": "1.0.0",
+  "repository": "https://github.com/vicheanath/nodemedia.git",
+  "author": "Vichea <48352653+vicheanath@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "src/*"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "defaultScope": "global"
+    }
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "commit": "cz",
+    "commit:signed": "cz -S"
+  }
+}
