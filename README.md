@@ -35,3 +35,24 @@ Revolutionize your content delivery with our cutting-edge real-time streaming pr
 | Documentation                                 | Offers comprehensive documentation for developers to easily integrate and utilize the WebSocket live stream API.|    :x:        |
 | Compatibility with Standard Libraries         | Ensures compatibility with standard WebSocket libraries and frameworks for various programming languages.       |    :x:        |
 
+## Reviewers
+
+Contributors helping to review/merge pull requests:
+
+- [@vicheanath](https://github.com/vicheanath)
+
+## Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+
+## How to run locally
+
+Check <a href="CONTRIBUTING.md">here</a> on how to run locally</a>
+
+## Why did you make this?
+
+
+
+## Attribution
+
+For RTMP, we use [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
