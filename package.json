@@ -5,14 +5,10 @@
   "author": "Vichea <48352653+vicheanath@users.noreply.github.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "src/*"
-    ],
-    "nohoist": [
-      "**"
-    ]
-  },
+  "workspaces": [
+    "src/*"
+  ],
+  
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
@@ -29,6 +25,7 @@
   "scripts": {
     "prepare": "husky install",
     "commit": "cz",
-    "commit:signed": "cz -S"
+    "commit:signed": "cz -S",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore --ignore-path .prettierignore"
   }
 }
