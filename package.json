@@ -8,13 +8,13 @@
   "workspaces": [
     "src/*"
   ],
-  
   "devDependencies": {
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
   },
   "config": {
     "commitizen": {
@@ -26,6 +26,9 @@
     "prepare": "husky install",
     "commit": "cz",
     "commit:signed": "cz -S",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+    "test": "jest",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --ignore-path .gitignore --ignore-path .prettierignore"
   }
 }
