@@ -1,7 +1,4 @@
 
-![ndoemedia-logo-1-we](https://github.com/vicheanath/nodemedia/assets/48352653/f75b862f-5a9f-4408-bb5e-1570dabc9bbc)
-
-
 # Nodemedia
 Revolutionize your content delivery with our cutting-edge real-time streaming project. Experience lightning-fast sub-0.5 seconds latency, setting a new standard in the industry. Our dynamic solution, the Stellar Streaming Engine, is powered by the latest technology to ensure seamless and instantaneous content delivery.
 
