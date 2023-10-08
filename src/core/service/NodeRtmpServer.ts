@@ -18,10 +18,8 @@ enum RTPort {
 }
 
 class TlsServer {
-  private logs: Logs;
   private server: Tls.Server;
   constructor() {
-    this.logs = new Logs();
     this.server = Tls.createServer(
       {
         key: Fs.readFileSync("./certs/key.pem"),
@@ -34,53 +32,49 @@ class TlsServer {
   }
 
   public start(): void {
-    this.logs.info("Starting TLS server...");
+    Logs.info("Starting TLS server...");
     this.server.listen(RTPort.RTMPS, () => {
-      this.logs.info("TLS server started");
+      Logs.info("TLS server started");
     });
   }
 
   public stop(): void {
-    this.logs.info("Stopping TLS server...");
+    Logs.info("Stopping TLS server...");
     this.server.close(() => {
-      this.logs.info("TLS server stopped");
+      Logs.info("TLS server stopped");
     });
   }
 }
 
 class TcpServer {
-  private logs: Logs;
   private server: Net.Server;
   constructor() {
-    this.logs = new Logs();
     this.server = Net.createServer((socket) => {
       // TODO: Handle socket
     });
   }
 
   public start(): void {
-    this.logs.info("Starting TCP server...");
+    Logs.info("Starting TCP server...");
     this.server.listen(RTPort.RTMP, () => {
-      this.logs.info("TCP server started");
+      Logs.info("TCP server started");
     });
   }
 
   public stop(): void {
-    this.logs.info("Stopping TCP server...");
+    Logs.info("Stopping TCP server...");
     this.server.close(() => {
-      this.logs.info("TCP server stopped");
+      Logs.info("TCP server stopped");
     });
   }
 }
 
-export default class RTMP<T extends IRTMP> {
-  private logs: Logs;
+export default class NodeRtmpServer {
   private tcpServer: TcpServer;
   private tlsServer: TlsServer;
   private port: number;
   private host: string;
   constructor(port: number, host: string) {
-    this.logs = new Logs();
     this.tcpServer = new TcpServer();
     this.tlsServer = new TlsServer();
 
@@ -101,7 +95,7 @@ export default class RTMP<T extends IRTMP> {
         this.tlsServer.start();
         break;
     }
-    this.logs.info("Starting RTMP server...");
+    Logs.info("Starting RTMP server...");
   }
 
   public stop(): void {
@@ -117,6 +111,6 @@ export default class RTMP<T extends IRTMP> {
         this.tlsServer.stop();
         break;
     }
-    this.logs.info("Stopping RTMP server...");
+    Logs.info("Stopping RTMP server...");
   }
 }
