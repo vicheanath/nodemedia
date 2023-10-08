@@ -5,10 +5,12 @@
   "license": "MIT",
   "scripts": {
     "build": "npx tsc",
-    "start": "concurrently \"npx tsc --watch\" \"nodemon ./dist/server.js\""
+    "start": "concurrently \"npx tsc --watch\" \"nodemon ./dist/index.js\"",
+    "start:js" : "node ./dist/index.js"
   },
   "devDependencies": {
     "chalk": "^5.3.0",
+    "concurrently": "^8.2.1",
     "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
   },
